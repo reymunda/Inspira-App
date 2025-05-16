@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB1972BA2DD10E6C00AAE90C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EB1972B92DD10E6C00AAE90C /* Lottie */; };
+		EB1972BC2DD10E9D00AAE90C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EB1972BB2DD10E9D00AAE90C /* Lottie */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB88204E2DD0A2F0009C0AC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB8820352DD0A2EF009C0AC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB88203C2DD0A2EF009C0AC7;
+			remoteInfo = "Inspira-VoiceBased";
+		};
+		EB8820582DD0A2F0009C0AC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB8820352DD0A2EF009C0AC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB88203C2DD0A2EF009C0AC7;
+			remoteInfo = "Inspira-VoiceBased";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EB88203D2DD0A2EF009C0AC7 /* Inspira-VoiceBased.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inspira-VoiceBased.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB88204D2DD0A2F0009C0AC7 /* Inspira-VoiceBasedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Inspira-VoiceBasedTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB8820572DD0A2F0009C0AC7 /* Inspira-VoiceBasedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Inspira-VoiceBasedUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		EB88203F2DD0A2EF009C0AC7 /* Inspira-VoiceBased */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Inspira-VoiceBased";
+			sourceTree = "<group>";
+		};
+		EB8820502DD0A2F0009C0AC7 /* Inspira-VoiceBasedTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Inspira-VoiceBasedTests";
+			sourceTree = "<group>";
+		};
+		EB88205A2DD0A2F0009C0AC7 /* Inspira-VoiceBasedUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Inspira-VoiceBasedUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB88203A2DD0A2EF009C0AC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB1972BA2DD10E6C00AAE90C /* Lottie in Frameworks */,
+				EB1972BC2DD10E9D00AAE90C /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB88204A2DD0A2F0009C0AC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB8820542DD0A2F0009C0AC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB8820342DD0A2EF009C0AC7 = {
+			isa = PBXGroup;
+			children = (
+				EB88203F2DD0A2EF009C0AC7 /* Inspira-VoiceBased */,
+				EB8820502DD0A2F0009C0AC7 /* Inspira-VoiceBasedTests */,
+				EB88205A2DD0A2F0009C0AC7 /* Inspira-VoiceBasedUITests */,
+				EB88203E2DD0A2EF009C0AC7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB88203E2DD0A2EF009C0AC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB88203D2DD0A2EF009C0AC7 /* Inspira-VoiceBased.app */,
+				EB88204D2DD0A2F0009C0AC7 /* Inspira-VoiceBasedTests.xctest */,
+				EB8820572DD0A2F0009C0AC7 /* Inspira-VoiceBasedUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB88203C2DD0A2EF009C0AC7 /* Inspira-VoiceBased */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB8820612DD0A2F0009C0AC7 /* Build configuration list for PBXNativeTarget "Inspira-VoiceBased" */;
+			buildPhases = (
+				EB8820392DD0A2EF009C0AC7 /* Sources */,
+				EB88203A2DD0A2EF009C0AC7 /* Frameworks */,
+				EB88203B2DD0A2EF009C0AC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				EB88203F2DD0A2EF009C0AC7 /* Inspira-VoiceBased */,
+			);
+			name = "Inspira-VoiceBased";
+			packageProductDependencies = (
+				EB1972B92DD10E6C00AAE90C /* Lottie */,
+				EB1972BB2DD10E9D00AAE90C /* Lottie */,
+			);
+			productName = "Inspira-VoiceBased";
+			productReference = EB88203D2DD0A2EF009C0AC7 /* Inspira-VoiceBased.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EB88204C2DD0A2F0009C0AC7 /* Inspira-VoiceBasedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB8820642DD0A2F0009C0AC7 /* Build configuration list for PBXNativeTarget "Inspira-VoiceBasedTests" */;
+			buildPhases = (
+				EB8820492DD0A2F0009C0AC7 /* Sources */,
+				EB88204A2DD0A2F0009C0AC7 /* Frameworks */,
+				EB88204B2DD0A2F0009C0AC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB88204F2DD0A2F0009C0AC7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EB8820502DD0A2F0009C0AC7 /* Inspira-VoiceBasedTests */,
+			);
+			name = "Inspira-VoiceBasedTests";
+			packageProductDependencies = (
+			);
+			productName = "Inspira-VoiceBasedTests";
+			productReference = EB88204D2DD0A2F0009C0AC7 /* Inspira-VoiceBasedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EB8820562DD0A2F0009C0AC7 /* Inspira-VoiceBasedUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB8820672DD0A2F0009C0AC7 /* Build configuration list for PBXNativeTarget "Inspira-VoiceBasedUITests" */;
+			buildPhases = (
+				EB8820532DD0A2F0009C0AC7 /* Sources */,
+				EB8820542DD0A2F0009C0AC7 /* Frameworks */,
+				EB8820552DD0A2F0009C0AC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB8820592DD0A2F0009C0AC7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EB88205A2DD0A2F0009C0AC7 /* Inspira-VoiceBasedUITests */,
+			);
+			name = "Inspira-VoiceBasedUITests";
+			packageProductDependencies = (
+			);
+			productName = "Inspira-VoiceBasedUITests";
+			productReference = EB8820572DD0A2F0009C0AC7 /* Inspira-VoiceBasedUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB8820352DD0A2EF009C0AC7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					EB88203C2DD0A2EF009C0AC7 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					EB88204C2DD0A2F0009C0AC7 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = EB88203C2DD0A2EF009C0AC7;
+					};
+					EB8820562DD0A2F0009C0AC7 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = EB88203C2DD0A2EF009C0AC7;
+					};
+				};
+			};
+			buildConfigurationList = EB8820382DD0A2EF009C0AC7 /* Build configuration list for PBXProject "Inspira-VoiceBased" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB8820342DD0A2EF009C0AC7;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				EB1972B52DD10CDB00AAE90C /* XCLocalSwiftPackageReference "../../../Downloads/lottie-ios-master" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = EB88203E2DD0A2EF009C0AC7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB88203C2DD0A2EF009C0AC7 /* Inspira-VoiceBased */,
+				EB88204C2DD0A2F0009C0AC7 /* Inspira-VoiceBasedTests */,
+				EB8820562DD0A2F0009C0AC7 /* Inspira-VoiceBasedUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB88203B2DD0A2EF009C0AC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB88204B2DD0A2F0009C0AC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB8820552DD0A2F0009C0AC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB8820392DD0A2EF009C0AC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB8820492DD0A2F0009C0AC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB8820532DD0A2F0009C0AC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB88204F2DD0A2F0009C0AC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB88203C2DD0A2EF009C0AC7 /* Inspira-VoiceBased */;
+			targetProxy = EB88204E2DD0A2F0009C0AC7 /* PBXContainerItemProxy */;
+		};
+		EB8820592DD0A2F0009C0AC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB88203C2DD0A2EF009C0AC7 /* Inspira-VoiceBased */;
+			targetProxy = EB8820582DD0A2F0009C0AC7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EB88205F2DD0A2F0009C0AC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EB8820602DD0A2F0009C0AC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB8820622DD0A2F0009C0AC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Inspira-VoiceBased/Preview Content\"";
+				DEVELOPMENT_TEAM = LG73635B4T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AppleDevAcademy.Inspira-VoiceBased1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB8820632DD0A2F0009C0AC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Inspira-VoiceBased/Preview Content\"";
+				DEVELOPMENT_TEAM = LG73635B4T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AppleDevAcademy.Inspira-VoiceBased1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EB8820652DD0A2F0009C0AC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LG73635B4T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AppleDevAcademy.Inspira-VoiceBasedTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inspira-VoiceBased.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Inspira-VoiceBased";
+			};
+			name = Debug;
+		};
+		EB8820662DD0A2F0009C0AC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LG73635B4T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AppleDevAcademy.Inspira-VoiceBasedTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inspira-VoiceBased.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Inspira-VoiceBased";
+			};
+			name = Release;
+		};
+		EB8820682DD0A2F0009C0AC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LG73635B4T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AppleDevAcademy.Inspira-VoiceBasedUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Inspira-VoiceBased";
+			};
+			name = Debug;
+		};
+		EB8820692DD0A2F0009C0AC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LG73635B4T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AppleDevAcademy.Inspira-VoiceBasedUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Inspira-VoiceBased";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB8820382DD0A2EF009C0AC7 /* Build configuration list for PBXProject "Inspira-VoiceBased" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB88205F2DD0A2F0009C0AC7 /* Debug */,
+				EB8820602DD0A2F0009C0AC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB8820612DD0A2F0009C0AC7 /* Build configuration list for PBXNativeTarget "Inspira-VoiceBased" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB8820622DD0A2F0009C0AC7 /* Debug */,
+				EB8820632DD0A2F0009C0AC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB8820642DD0A2F0009C0AC7 /* Build configuration list for PBXNativeTarget "Inspira-VoiceBasedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB8820652DD0A2F0009C0AC7 /* Debug */,
+				EB8820662DD0A2F0009C0AC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB8820672DD0A2F0009C0AC7 /* Build configuration list for PBXNativeTarget "Inspira-VoiceBasedUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB8820682DD0A2F0009C0AC7 /* Debug */,
+				EB8820692DD0A2F0009C0AC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		EB1972B52DD10CDB00AAE90C /* XCLocalSwiftPackageReference "../../../Downloads/lottie-ios-master" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../Downloads/lottie-ios-master";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EB1972B92DD10E6C00AAE90C /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Lottie;
+		};
+		EB1972BB2DD10E9D00AAE90C /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = EB8820352DD0A2EF009C0AC7 /* Project object */;
+}
