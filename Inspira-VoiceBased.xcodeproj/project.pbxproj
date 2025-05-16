@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EB1972BA2DD10E6C00AAE90C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EB1972B92DD10E6C00AAE90C /* Lottie */; };
 		EB1972BC2DD10E9D00AAE90C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EB1972BB2DD10E9D00AAE90C /* Lottie */; };
+		EB4F51052DD73EE700DA17FF /* SwiftUISpeechToText in Frameworks */ = {isa = PBXBuildFile; productRef = EB4F51042DD73EE700DA17FF /* SwiftUISpeechToText */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 			files = (
 				EB1972BA2DD10E6C00AAE90C /* Lottie in Frameworks */,
 				EB1972BC2DD10E9D00AAE90C /* Lottie in Frameworks */,
+				EB4F51052DD73EE700DA17FF /* SwiftUISpeechToText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,12 +81,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB4F51002DD728E200DA17FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EB8820342DD0A2EF009C0AC7 = {
 			isa = PBXGroup;
 			children = (
 				EB88203F2DD0A2EF009C0AC7 /* Inspira-VoiceBased */,
 				EB8820502DD0A2F0009C0AC7 /* Inspira-VoiceBasedTests */,
 				EB88205A2DD0A2F0009C0AC7 /* Inspira-VoiceBasedUITests */,
+				EB4F51002DD728E200DA17FF /* Frameworks */,
 				EB88203E2DD0A2EF009C0AC7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,6 +131,7 @@
 			packageProductDependencies = (
 				EB1972B92DD10E6C00AAE90C /* Lottie */,
 				EB1972BB2DD10E9D00AAE90C /* Lottie */,
+				EB4F51042DD73EE700DA17FF /* SwiftUISpeechToText */,
 			);
 			productName = "Inspira-VoiceBased";
 			productReference = EB88203D2DD0A2EF009C0AC7 /* Inspira-VoiceBased.app */;
@@ -206,6 +217,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				EB1972B52DD10CDB00AAE90C /* XCLocalSwiftPackageReference "../../../Downloads/lottie-ios-master" */,
+				EB4F51032DD73E1000DA17FF /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EB88203E2DD0A2EF009C0AC7 /* Products */;
@@ -411,6 +423,8 @@
 				DEVELOPMENT_TEAM = LG73635B4T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your meeting in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -440,6 +454,8 @@
 				DEVELOPMENT_TEAM = LG73635B4T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your meeting in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -578,6 +594,17 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		EB4F51032DD73E1000DA17FF /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pandashashwat97/SwiftUISpeechToText.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		EB1972B92DD10E6C00AAE90C /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -586,6 +613,11 @@
 		EB1972BB2DD10E9D00AAE90C /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Lottie;
+		};
+		EB4F51042DD73EE700DA17FF /* SwiftUISpeechToText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB4F51032DD73E1000DA17FF /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */;
+			productName = SwiftUISpeechToText;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

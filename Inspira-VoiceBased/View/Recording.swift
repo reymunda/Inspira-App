@@ -5,10 +5,21 @@
 //  Created by Reymunda Alfathur on 13/05/25.
 //
 import SwiftUI
+import AVFoundation
+import SwiftUISpeechToText
+
 
 struct Recording: View {
     @State private var navigate = false
-
+    @State private var isRecording = false
+    @StateObject var speechRecognizer = SpeechRecognizer(localeIdentifier: "id-ID")
+    
+    var transcript: String?
+    var lastWordsForDisplay: String {
+            let words = speechRecognizer.transcript.split(separator: " ")
+            let lastWords = words.suffix(20)
+            return lastWords.joined(separator: " ")
+        }
     var body: some View {
         NavigationStack {
             ZStack {
@@ -38,10 +49,13 @@ struct Recording: View {
                 VStack {
                     RecordingMic()
                     
-                    Text("Say something...")
+                    Text(speechRecognizer.transcript.isEmpty ? "Say something..." : lastWordsForDisplay)
                         .font(.title)
                         .foregroundColor(.white)
                         .padding(.top, 24)
+                        .lineLimit(3)
+                        .opacity(0.5)
+
                     
                     Spacer()
                     
@@ -55,7 +69,14 @@ struct Recording: View {
                 .padding(.horizontal, 24)
                 .padding(.bottom, 8)
             }
-        }.navigationBarHidden(true)
+        }
+        .onAppear {
+            speechRecognizer.transcribe()
+        }
+        .onChange(of: speechRecognizer.transcript) { newTranscript in
+            print("Kamu bilang: \(newTranscript)")
+        }
+        .navigationBarHidden(true)
             .animation(nil)
         }
     }
