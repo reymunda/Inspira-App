@@ -4,12 +4,7 @@ import AudioToolbox
 
 struct CustomPicker: View {
     @State var selectedIndex: Int? = 0
-    @State var items: [MeetingSection] = [
-        MeetingSection(title: "Brain Dump", session: "Session 1", time: "05:00"),
-        MeetingSection(title: "Share the Results to Stakeholder", session: "Session 2", time: "12:00"),
-        MeetingSection(title: "Brainstorming", session: "Session 3", time: "03:00"),
-        MeetingSection(title: "Next Big Thing", session: "Session 4", time: "15:00")
-    ]
+    @EnvironmentObject var items: MeetingData
     
     var soundId: SystemSoundID = 1127
     var itemHeight: CGFloat = 58.0
@@ -23,7 +18,7 @@ struct CustomPicker: View {
         ZStack {
             ScrollView(.vertical) {
                 LazyVStack(spacing: 24) {
-                    ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
+                    ForEach(Array(items.sections.enumerated()), id: \.element.id) { index, item in
                         let indexDiff = Double(index - (selectedIndex ?? 0))
                         HStack {
                             VStack(alignment: .leading) {
@@ -94,4 +89,5 @@ struct CustomPicker: View {
 
 #Preview {
     CustomPicker()
+        .environmentObject(MeetingData())
 }

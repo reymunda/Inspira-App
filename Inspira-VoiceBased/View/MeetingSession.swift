@@ -1,19 +1,7 @@
 import SwiftUI
 
-struct MeetingSection: Identifiable, Equatable {
-    let id = UUID()
-    var title: String
-    var session: String
-    var time: String
-}
-
 struct MeetingSession: View {
-    @State private var sections: [MeetingSection] = [
-        MeetingSection(title: "Brain Dump", session: "Session 1", time: "05:00"),
-        MeetingSection(title: "Share the Results to Stakeholder", session: "Session 2", time: "12:00"),
-        MeetingSection(title: "Brainstorming", session: "Session 3", time: "03:00"),
-        MeetingSection(title: "Next Big Thing", session: "Session 4", time: "15:00")
-    ]
+    @EnvironmentObject var meetingData: MeetingData
     
     @State private var draggedItem: MeetingSection?
     @State private var editingItem: MeetingSection? // Edit session
@@ -84,7 +72,7 @@ struct MeetingSession: View {
                     .foregroundColor(Color("grey"))
                 Spacer()
                 Button(action: {
-                    addingItem = MeetingSection(title: "", session: "", time: "00:00") // Trigger Add New Session sheet
+                    addingItem = MeetingSection(title: "", session: "", time: "00:00", note: "No notes yet") // Trigger Add New Session sheet
                 }) {
                     HStack {
                         Image(systemName: "plus.circle")
@@ -99,12 +87,12 @@ struct MeetingSession: View {
             // Custom Drag & Drop List with Swipe
             ScrollView {
                 VStack(spacing: 16) {
-                    ForEach(sections) { section in
+                    ForEach(meetingData.sections) { section in
                         SwipeableCardView(
                             section: section,
                             onDelete: {
                                 withAnimation {
-                                    sections.removeAll { $0.id == section.id }
+                                    meetingData.sections.removeAll { $0.id == section.id }
                                 }
                             },
                             onEdit: {
@@ -123,7 +111,8 @@ struct MeetingSession: View {
                             self.draggedItem = section
                             return NSItemProvider(object: section.title as NSString)
                         }
-                        .onDrop(of: [.text], delegate: DropViewDelegate(item: section, sections: $sections, draggedItem: $draggedItem))
+                        .onDrop(of: [.text], delegate: DropViewDelegate(item: section, sections: $meetingData.sections, draggedItem: $draggedItem))
+
                     }
                 }
                 .padding(.horizontal, 20)
@@ -200,10 +189,10 @@ struct MeetingSession: View {
                 Button(action: {
                     let newSession = MeetingSection(
                         title: addTitle,
-                        session: "Session \(sections.count + 1)", // auto-generate session number
-                        time: String(format: "%02d:%02d", selectedMinute, selectedSecond)
+                        session: "Session \(meetingData.sections.count + 1)", // auto-generate session number
+                        time: String(format: "%02d:%02d", selectedMinute, selectedSecond), note: "No notes yet"
                     )
-                    sections.append(newSession) // Add the new session to the list
+                    meetingData.sections.append(newSession) // Add the new session to the list
                     addingItem = nil // Dismiss the sheet
                 }) {
                     Text("Save")
@@ -280,9 +269,9 @@ struct MeetingSession: View {
                 Button(action: {
                     if let editedSection = editingItem {
                         // Update the existing section
-                        if let index = sections.firstIndex(where: { $0.id == editedSection.id }) {
-                            sections[index].title = editTitle
-                            sections[index].time = String(format: "%02d:%02d", selectedMinute, selectedSecond)
+                        if let index = meetingData.sections.firstIndex(where: { $0.id == editedSection.id }) {
+                            meetingData.sections[index].title = editTitle
+                            meetingData.sections[index].time = String(format: "%02d:%02d", selectedMinute, selectedSecond)
                         }
                     }
                     editingItem = nil // Dismiss the sheet
@@ -411,4 +400,6 @@ struct SwipeableCardView: View {
 
 #Preview{
     MeetingSession()
+        .environmentObject(MeetingData())
+
 }

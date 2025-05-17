@@ -106,4 +106,6 @@ struct RecordingMic : View {
 
 #Preview{
     Recording()
+        .environmentObject(MeetingData())
+
 }

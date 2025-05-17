@@ -2,6 +2,7 @@ import SwiftUI
 import AVFoundation
 
 struct MeetingResult: View {
+    @EnvironmentObject var meetingData: MeetingData
     @State private var selectedTab = 0
     @State private var scrollOffset: CGFloat = 0
     @State private var audioProgress: Double = 0.0
@@ -142,17 +143,10 @@ struct MeetingResult: View {
 
     var transcriptView: some View {
         VStack(alignment: .leading, spacing: 24) {
-            transcriptSection(title: "Brain Dump", description:
-                "Oke, jadi pertama kita perlu fokus ke pengiriman yang lebih cepat dan lebih akurat. Banyak yang bilang mereka kadang gak ngerti dengan pilihan yang ada di aplikasi, jadi kita harus bisa menyederhanakan itu. Misalnya, buat fitur yang bisa ngatur ulang waktu pengiriman, biar pengguna bisa pilih kapan mereka mau terima barangnya."
-            )
-            
-            Divider()
-            
-            transcriptSection(title: "Share the Results to Stakeholders", description: "Setelah ide-ide itu keluar, kita perlu berbagi hasilnya ke stakeholder biar mereka tahu arah yang kita ambil. Mereka lebih peduli sama pengiriman yang lebih cepat dan pastiin nggak ada kesalahan. Selain itu, mereka juga bilang sistem pembayaran harus lebih mudah dan banyak pilihan supaya lebih fleksibel.Tapi, menurut mereka, yang paling menarik itu fitur yang personalisasi. Misalnya, kalau kita bisa kasih rekomendasi berdasarkan kebiasaan pengguna, itu bakal lebih menarik.")
-
-            Divider()
-            
-            transcriptSection(title: "Brainstorming", description: "Untuk pelacakan, kita harus lebih detail. Pengguna butuh estimasi waktu yang lebih akurat. Jadi kalau misalnya ada delay, mereka bisa tau lebih pasti kapan barang sampai")
+            ForEach(meetingData.sections){
+                session in
+                transcriptSection(title: session.title, note: session.note)
+            }
         }
         .padding(.top,8)
         .padding(.bottom,60)
@@ -174,12 +168,12 @@ struct MeetingResult: View {
         }
     }
     
-    func transcriptSection(title: String, description: String) -> some View {
+    func transcriptSection(title: String, note: String) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(title)
                 .font(.headline)
                 .foregroundColor(Color("black"))
-            Text(description)
+            Text(note)
                 .font(.callout)
                 .foregroundColor(Color("black"))
                 }
@@ -345,4 +339,6 @@ struct ScrollOffsetKey: PreferenceKey {
 
 #Preview {
     MeetingResult()
+        .environmentObject(MeetingData())
+
 }

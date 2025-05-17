@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var meetingData = MeetingData()
+    
     var body: some View {
         MeetingSession()
+            .environmentObject(meetingData)
     }
 }
 
