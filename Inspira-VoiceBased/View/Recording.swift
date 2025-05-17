@@ -15,8 +15,8 @@ struct Recording: View {
     @EnvironmentObject var meetingData: MeetingData
     @State private var navigate = false
     @State private var isRecording = false
+    @State private var lastIndex: Int? = nil
     @StateObject var speechRecognizer = SpeechRecognizer(localeIdentifier: "id-ID")
-    
     var lastWordsForDisplay: String {
             let words = speechRecognizer.transcript.split(separator: " ")
             let lastWords = words.suffix(20)
@@ -86,18 +86,18 @@ struct Recording: View {
             startRecording()
         }
         .onChange(of: speechRecognizer.transcript) { newTranscript in
-            
             if let index = meetingData.selectedIndex, meetingData.sections.indices.contains(index) {
-                meetingData.sections[index].note = lastWordsForDisplay
+                
+                // Cek kalau pindah index
+                if lastIndex != index {
+                    lastIndex = index
+                    speechRecognizer.stopTranscribing()
+                    speechRecognizer.transcribe()
+                    return
+                }
+
+                meetingData.sections[index].note = newTranscript
                 print("\(meetingData.sections[index].title): \(meetingData.sections[index])")
-            }
-
-
-        }
-        .onDisappear {
-            if let index = meetingData.selectedIndex,
-               meetingData.sections.indices.contains(index) {
-                meetingData.sections[index].note = lastWordsForDisplay
             }
         }
         .navigationBarHidden(true)
@@ -125,16 +125,15 @@ struct Recording: View {
     }
 
     func stopRecording() {
-        print("⏹ Memanggil stopRecording()")
+        print("Memanggil stopRecording()")
         audioRecorder?.stop()
         if let audioURL = audioURL {
-            print("🔗 URL audio yang disimpan:", audioURL)
+            print("URL audio yang disimpan:", audioURL)
         } else {
-            print("⚠️ audioURL masih nil")
+            print("audioURL masih nil")
         }
         meetingData.audioURL = audioURL
     }
-
 
     }
 
