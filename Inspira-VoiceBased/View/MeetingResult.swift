@@ -8,9 +8,9 @@ struct MeetingResult: View {
     @State private var scrollOffset: CGFloat = 0
     @State private var audioProgress: Double = 0.0
     @State private var isPlaying = false
-    @State private var audioDuration: Double = 112.0
+    @State private var audioDuration: Double? = 0.0
     @State private var player: AVAudioPlayer?
-    func getFormattedDate() -> String {
+    private func getFormattedDate() -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium 
         formatter.timeStyle = .none
@@ -218,7 +218,7 @@ struct MeetingResult: View {
 
                     Spacer()
 
-                    Text("Duration: \(timeString(from: audioDuration))")
+                    Text("Duration: \(timeString(from: audioDuration!))")
                         .font(.caption)
                         .foregroundColor(Color("black"))
                 }
@@ -279,7 +279,7 @@ struct MeetingResult: View {
                         }
 
                         Button(action: {
-                            player?.currentTime = min((player?.currentTime ?? 0) + 10, audioDuration)
+                            player?.currentTime = min((player?.currentTime ?? 0) + 10, audioDuration!)
                         }) {
                             Image(systemName: "forward.fill")
                                 .foregroundColor(Color("black"))
@@ -289,7 +289,7 @@ struct MeetingResult: View {
 
                     Spacer()
 
-                    Text(timeString(from: audioDuration))
+                    Text(timeString(from: audioDuration!))
                         .font(.caption)
                         .foregroundColor(Color("black"))
                 }
@@ -316,8 +316,8 @@ struct MeetingResult: View {
     func startProgressUpdate() {
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
             if let player = player {
-                audioProgress = player.currentTime / audioDuration
-                if player.currentTime >= audioDuration {
+                audioProgress = player.currentTime / audioDuration!
+                if player.currentTime >= audioDuration! {
                     isPlaying = false
                     timer.invalidate()
                 }
@@ -343,7 +343,7 @@ struct MeetingResult: View {
         do {
             player = try AVAudioPlayer(contentsOf: url)
             player?.volume = 1.0
-            audioDuration = player?.duration ?? 112
+            audioDuration = player?.duration ?? 0
             player?.prepareToPlay()
             print("Audio siap diputar, durasi: \(audioDuration)")
         } catch {

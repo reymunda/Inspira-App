@@ -24,5 +24,6 @@ class MeetingData: ObservableObject {
     ]
     @Published var selectedIndex: Int? = 0
     @Published var audioURL: URL?
+    @Published var tempAudio: URL?
 }
 

@@ -14,7 +14,6 @@ struct Recording: View {
     @State private var audioURL: URL?
     @EnvironmentObject var meetingData: MeetingData
     @State private var navigate = false
-    @State private var isRecording = false
     @State private var lastIndex: Int? = nil
     @StateObject var speechRecognizer = SpeechRecognizer(localeIdentifier: "id-ID")
     var lastWordsForDisplay: String {
@@ -68,11 +67,10 @@ struct Recording: View {
                     NavigationLink(destination: MeetingResult(), isActive: $navigate) {
                         EmptyView()
                     }
-                    .onChange(of: navigate) { newValue in
-                        if newValue == true {
-                            stopRecording()
-                            speechRecognizer.stopTranscribing()
-                        }
+                    .onChange(of: navigate) {
+                        stopRecording()
+                        speechRecognizer.stopTranscribing()
+                        
                     }
 
                 }
@@ -81,7 +79,7 @@ struct Recording: View {
                 .padding(.bottom, 8)
             }
         }
-        .onAppear {
+        .task {
             speechRecognizer.transcribe()
             startRecording()
         }
@@ -107,9 +105,20 @@ struct Recording: View {
             }
         }
         .navigationBarHidden(true)
-            .animation(nil)
+        .animation(nil)
         }
+    func setupAudioSession() {
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker])
+            try session.setActive(true)
+            print("Audio session is active")
+        } catch {
+            print("Failed to setup audio session: \(error.localizedDescription)")
+        }
+    }
     func startRecording() {
+        setupAudioSession()
         let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let filename = documents.appendingPathComponent("meetingAudio.m4a")
         audioURL = filename

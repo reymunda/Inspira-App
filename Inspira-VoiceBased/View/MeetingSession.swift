@@ -12,7 +12,7 @@ struct MeetingSession: View {
     @State private var selectedMinute: Int = 0
     @State private var selectedSecond: Int = 0
     @State private var isRecording = false
-    func getFormattedDate() -> String {
+    private func getFormattedDate() -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
@@ -193,8 +193,8 @@ struct MeetingSession: View {
                         session: "Session \(meetingData.sections.count + 1)", // auto-generate session number
                         time: String(format: "%02d:%02d", selectedMinute, selectedSecond), note: "No notes yet"
                     )
-                    meetingData.sections.append(newSession) // Add the new session to the list
-                    addingItem = nil // Dismiss the sheet
+                    meetingData.sections.append(newSession)
+                    addingItem = nil
                 }) {
                     Text("Save")
                         .frame(maxWidth: .infinity)
