@@ -3,7 +3,6 @@ import SwiftUI
 import AudioToolbox
 
 struct CustomPicker: View {
-    @State var selectedIndex: Int? = 0
     @EnvironmentObject var items: MeetingData
     
     var soundId: SystemSoundID = 1127
@@ -19,7 +18,7 @@ struct CustomPicker: View {
             ScrollView(.vertical) {
                 LazyVStack(spacing: 24) {
                     ForEach(Array(items.sections.enumerated()), id: \.element.id) { index, item in
-                        let indexDiff = Double(index - (selectedIndex ?? 0))
+                        let indexDiff = Double(index - (items.selectedIndex ?? 0))
                         HStack {
                             VStack(alignment: .leading) {
                                 Text(item.title)
@@ -31,7 +30,7 @@ struct CustomPicker: View {
                             Spacer()
                             Text(item.time)
                                 .bold()
-                                .foregroundColor(index == selectedIndex ? Color(.blue) : Color("black"))
+                                .foregroundColor(index == items.selectedIndex ? Color(.blue) : Color("black"))
                             
                         }
                         .padding()
@@ -39,14 +38,14 @@ struct CustomPicker: View {
                             RoundedRectangle(cornerRadius: 12)
                                 .fill(Color.white)
                                 .stroke(
-                                    selectedIndex == index
+                                    items.selectedIndex == index
                                         ? AnyShapeStyle(LinearGradient(
                                             gradient: Gradient(colors: [Color("blue"), Color("primary")]),
                                             startPoint: .trailing,
                                             endPoint: .leading
                                         ))
                                         : AnyShapeStyle(Color.clear),
-                                        lineWidth: selectedIndex == index ? 4 : 0
+                                    lineWidth: items.selectedIndex == index ? 4 : 0
                                     )
 
                             )
@@ -64,11 +63,11 @@ struct CustomPicker: View {
                 .padding(.horizontal, 4)
             }
             .contentMargins(.vertical, 320 / 2 - 58 / 2)
-            .scrollPosition(id: $selectedIndex, anchor: .center)
+            .scrollPosition(id: $items.selectedIndex, anchor: .center)
             .frame(height: 320)
             .scrollTargetBehavior(.viewAligned)
             .scrollIndicators(.hidden)
-            .onChange(of: selectedIndex, initial: false) {
+            .onChange(of: items.selectedIndex, initial: false) {
                 AudioServicesPlaySystemSound(soundId)
             }
             Image("session-dissapear")

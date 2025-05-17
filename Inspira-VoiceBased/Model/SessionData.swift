@@ -23,5 +23,6 @@ class MeetingData: ObservableObject {
         MeetingSection(title: "Brainstorming", session: "Session 3", time: "03:00", note: "No notes yet"),
         MeetingSection(title: "Next Big Thing", session: "Session 4", time: "15:00", note: "No notes yet")
     ]
+    @Published var selectedIndex: Int? = 0
 }
 

@@ -117,7 +117,7 @@ struct MeetingSession: View {
                 }
                 .padding(.horizontal, 20)
             }
-
+            
             // Start Meeting Button
             Button(action: {
                 isRecording.toggle()

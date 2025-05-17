@@ -10,11 +10,11 @@ import SwiftUISpeechToText
 
 
 struct Recording: View {
+    @EnvironmentObject var meetingData: MeetingData
     @State private var navigate = false
     @State private var isRecording = false
     @StateObject var speechRecognizer = SpeechRecognizer(localeIdentifier: "id-ID")
     
-    var transcript: String?
     var lastWordsForDisplay: String {
             let words = speechRecognizer.transcript.split(separator: " ")
             let lastWords = words.suffix(20)
@@ -54,7 +54,9 @@ struct Recording: View {
                         .foregroundColor(.white)
                         .padding(.top, 24)
                         .lineLimit(3)
+                        .truncationMode(.head)
                         .opacity(0.5)
+
 
                     
                     Spacer()
@@ -74,7 +76,19 @@ struct Recording: View {
             speechRecognizer.transcribe()
         }
         .onChange(of: speechRecognizer.transcript) { newTranscript in
-            print("Kamu bilang: \(newTranscript)")
+            
+            if let index = meetingData.selectedIndex, meetingData.sections.indices.contains(index) {
+                meetingData.sections[index].note = lastWordsForDisplay
+                print("\(meetingData.sections[index].title): \(meetingData.sections[index])")
+            }
+
+
+        }
+        .onDisappear {
+            if let index = meetingData.selectedIndex,
+               meetingData.sections.indices.contains(index) {
+                meetingData.sections[index].note = lastWordsForDisplay
+            }
         }
         .navigationBarHidden(true)
             .animation(nil)
