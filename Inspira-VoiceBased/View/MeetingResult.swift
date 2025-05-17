@@ -332,11 +332,9 @@ struct MeetingResult: View {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
-            print("Failed to set audio session: \(error.localizedDescription)")
         }
 
         guard let url = meetingData.audioURL ?? Bundle.main.url(forResource: "sample", withExtension: "mp3") else {
-            print("Audio URL tidak ada")
             return
         }
 
@@ -345,9 +343,7 @@ struct MeetingResult: View {
             player?.volume = 1.0
             audioDuration = player?.duration ?? 0
             player?.prepareToPlay()
-            print("Audio siap diputar, durasi: \(audioDuration)")
         } catch {
-            print("Failed to load audio: \(error.localizedDescription)")
         }
     }
 

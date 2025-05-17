@@ -206,7 +206,7 @@ struct MeetingSession: View {
                 .padding(.top, 6)
                 
                 Button("Cancel") {
-                    addingItem = nil // Dismiss the sheet
+                    addingItem = nil
                 }
                 .frame(maxWidth: .infinity)
                 .foregroundColor(Color("primary"))
@@ -275,7 +275,7 @@ struct MeetingSession: View {
                             meetingData.sections[index].time = String(format: "%02d:%02d", selectedMinute, selectedSecond)
                         }
                     }
-                    editingItem = nil // Dismiss the sheet
+                    editingItem = nil
                 }) {
                     Text("Save")
                         .frame(maxWidth: .infinity)
@@ -287,7 +287,7 @@ struct MeetingSession: View {
                 .padding(.top, 6)
                 
                 Button("Cancel") {
-                    editingItem = nil // Dismiss the sheet
+                    editingItem = nil 
                 }
                 .frame(maxWidth: .infinity)
                 .foregroundColor(Color("primary"))

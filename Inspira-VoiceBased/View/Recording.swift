@@ -90,9 +90,8 @@ struct Recording: View {
                     lastIndex = index
                     speechRecognizer.stopTranscribing()
                     
-                    // Hindari capture suara saat transcriber belum mulai
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                        if lastIndex == index { // pastikan user belum ganti index lagi
+                        if lastIndex == index {
                             speechRecognizer.transcribe()
                         }
                     }
@@ -112,9 +111,7 @@ struct Recording: View {
         do {
             try session.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker])
             try session.setActive(true)
-            print("Audio session is active")
         } catch {
-            print("Failed to setup audio session: \(error.localizedDescription)")
         }
     }
     func startRecording() {
@@ -133,20 +130,13 @@ struct Recording: View {
         do {
                 audioRecorder = try AVAudioRecorder(url: filename, settings: settings)
                 audioRecorder?.record()
-                print("Recording started ") // debug log
             } catch {
-                print("Failed to start recording: \(error.localizedDescription)")
+
             }
     }
 
     func stopRecording() {
-        print("Memanggil stopRecording()")
         audioRecorder?.stop()
-        if let audioURL = audioURL {
-            print("URL audio yang disimpan:", audioURL)
-        } else {
-            print("audioURL masih nil")
-        }
         meetingData.audioURL = audioURL
     }
 
