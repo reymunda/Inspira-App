@@ -18,11 +18,11 @@ struct MeetingSection: Identifiable, Equatable {
 
 class MeetingData: ObservableObject {
     @Published var sections: [MeetingSection] = [
-        MeetingSection(title: "Brain wakwaw", session: "Session 1", time: "05:00", note: "No notes yet"),
+        MeetingSection(title: "Brainstorming", session: "Session 1", time: "05:00", note: "No notes yet"),
         MeetingSection(title: "Share the Results to Stakeholder", session: "Session 2", time: "12:00", note: "No notes yet"),
-        MeetingSection(title: "Brainstorming", session: "Session 3", time: "03:00", note: "No notes yet"),
-        MeetingSection(title: "Next Big Thing", session: "Session 4", time: "15:00", note: "No notes yet")
+        MeetingSection(title: "Next Big Thing", session: "Session 3", time: "03:00", note: "No notes yet")
     ]
     @Published var selectedIndex: Int? = 0
+    @Published var audioURL: URL?
 }
 

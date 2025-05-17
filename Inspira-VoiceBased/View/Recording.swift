@@ -10,6 +10,8 @@ import SwiftUISpeechToText
 
 
 struct Recording: View {
+    @State private var audioRecorder: AVAudioRecorder?
+    @State private var audioURL: URL?
     @EnvironmentObject var meetingData: MeetingData
     @State private var navigate = false
     @State private var isRecording = false
@@ -66,6 +68,13 @@ struct Recording: View {
                     NavigationLink(destination: MeetingResult(), isActive: $navigate) {
                         EmptyView()
                     }
+                    .onChange(of: navigate) { newValue in
+                        if newValue == true {
+                            stopRecording()
+                            speechRecognizer.stopTranscribing()
+                        }
+                    }
+
                 }
                 .padding(.top, 42)
                 .padding(.horizontal, 24)
@@ -74,6 +83,7 @@ struct Recording: View {
         }
         .onAppear {
             speechRecognizer.transcribe()
+            startRecording()
         }
         .onChange(of: speechRecognizer.transcript) { newTranscript in
             
@@ -93,6 +103,39 @@ struct Recording: View {
         .navigationBarHidden(true)
             .animation(nil)
         }
+    func startRecording() {
+        let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let filename = documents.appendingPathComponent("meetingAudio.m4a")
+        audioURL = filename
+        
+        let settings = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 12000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+
+        do {
+                audioRecorder = try AVAudioRecorder(url: filename, settings: settings)
+                audioRecorder?.record()
+                print("Recording started ") // debug log
+            } catch {
+                print("Failed to start recording: \(error.localizedDescription)")
+            }
+    }
+
+    func stopRecording() {
+        print("⏹ Memanggil stopRecording()")
+        audioRecorder?.stop()
+        if let audioURL = audioURL {
+            print("🔗 URL audio yang disimpan:", audioURL)
+        } else {
+            print("⚠️ audioURL masih nil")
+        }
+        meetingData.audioURL = audioURL
+    }
+
+
     }
 
 
@@ -117,6 +160,8 @@ struct RecordingMic : View {
         }
     }
 }
+
+
 
 #Preview{
     Recording()

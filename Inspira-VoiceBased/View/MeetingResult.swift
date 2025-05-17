@@ -11,7 +11,7 @@ struct MeetingResult: View {
     @State private var player: AVAudioPlayer?
     func getFormattedDate() -> String {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium  // Bisa memilih style lain seperti .short atau .long
+        formatter.dateStyle = .medium 
         formatter.timeStyle = .none
         return formatter.string(from: Date())
     }
@@ -211,7 +211,7 @@ struct MeetingResult: View {
 
                     Spacer()
 
-                    Text("Duration 1:52 min")
+                    Text("Duration: \(timeString(from: audioDuration))")
                         .font(.caption)
                         .foregroundColor(Color("black"))
                 }
@@ -223,7 +223,11 @@ struct MeetingResult: View {
                         .frame(height: 4)
 
                     Capsule()
-                        .fill(Color("blue"))
+                        .fill((LinearGradient(
+                            gradient: Gradient(colors: [Color("blue"), Color("neon")]),
+                            startPoint: .topTrailing,
+                            endPoint: .bottomLeading
+                        )))
                         .frame(width: CGFloat(audioProgress) * UIScreen.main.bounds.width * 0.7, height: 4)
                 }
 
@@ -244,7 +248,11 @@ struct MeetingResult: View {
                                 .scaleEffect(1.2)
                         }
 
-                        Button(action: togglePlayback) {
+                        Button(action: {
+                            togglePlayback()
+                            print(isPlaying)
+                            print(meetingData.audioURL)
+                        }) {
                             Image(systemName: isPlaying ? "pause.fill" : "play.fill")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -313,15 +321,30 @@ struct MeetingResult: View {
     }
 
     func setupAudio() {
-        guard let url = Bundle.main.url(forResource: "sample", withExtension: "mp3") else { return }
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("Failed to set audio session: \(error.localizedDescription)")
+        }
+
+        guard let url = meetingData.audioURL ?? Bundle.main.url(forResource: "sample", withExtension: "mp3") else {
+            print("Audio URL tidak ada")
+            return
+        }
 
         do {
             player = try AVAudioPlayer(contentsOf: url)
+            player?.volume = 1.0
             audioDuration = player?.duration ?? 112
+            player?.prepareToPlay()
+            print("Audio siap diputar, durasi: \(audioDuration)")
         } catch {
-            print("Failed to load audio")
+            print("Failed to load audio: \(error.localizedDescription)")
         }
     }
+
+
 
     func timeString(from seconds: Double) -> String {
         let mins = Int(seconds) / 60

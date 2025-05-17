@@ -4,8 +4,8 @@ struct MeetingSession: View {
     @EnvironmentObject var meetingData: MeetingData
     
     @State private var draggedItem: MeetingSection?
-    @State private var editingItem: MeetingSection? // Edit session
-    @State private var addingItem: MeetingSection? // Add new session
+    @State private var editingItem: MeetingSection?
+    @State private var addingItem: MeetingSection?
     @State private var editTitle: String = ""
     @State private var addTitle: String = ""
     @State private var editTime: String = ""
@@ -14,7 +14,7 @@ struct MeetingSession: View {
     @State private var isRecording = false
     func getFormattedDate() -> String {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium  // Bisa memilih style lain seperti .short atau .long
+        formatter.dateStyle = .medium
         formatter.timeStyle = .none
         return formatter.string(from: Date())
     }
@@ -134,6 +134,7 @@ struct MeetingSession: View {
             .padding()
         }
         .ignoresSafeArea()
+        
 
         // Add New Session Sheet
         .sheet(item: $addingItem) { _ in
