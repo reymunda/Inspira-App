@@ -32,7 +32,7 @@ struct MeetingResult: View {
                                     .padding(.vertical, 0)
                                     .padding(.horizontal, 20)
 
-                                if selectedTab == 0 {
+                                if selectedTab == 1 {
                                     summaryView
                                         .padding(.horizontal, 20)
                                 } else {
@@ -119,8 +119,8 @@ struct MeetingResult: View {
     var segmentedControl: some View {
         HStack {
             Picker("", selection: $selectedTab) {
-                Text("Summary").tag(0)
-                Text("Transcript").tag(1)
+                Text("Transcript").tag(0)
+                Text("Summary").tag(1)
             }
             .pickerStyle(.segmented)
         }

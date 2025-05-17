@@ -88,13 +88,19 @@ struct Recording: View {
         .onChange(of: speechRecognizer.transcript) { newTranscript in
             if let index = meetingData.selectedIndex, meetingData.sections.indices.contains(index) {
                 
-                // Cek kalau pindah index
                 if lastIndex != index {
                     lastIndex = index
                     speechRecognizer.stopTranscribing()
-                    speechRecognizer.transcribe()
+                    
+                    // Hindari capture suara saat transcriber belum mulai
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        if lastIndex == index { // pastikan user belum ganti index lagi
+                            speechRecognizer.transcribe()
+                        }
+                    }
                     return
                 }
+
 
                 meetingData.sections[index].note = newTranscript
                 print("\(meetingData.sections[index].title): \(meetingData.sections[index])")
