@@ -9,9 +9,11 @@ import Lottie
 
 struct Loading : View {
     var body: some View{
-        VStack{
+        VStack(spacing: -40){
             LottieView(animation: .named("loading.json"))
                 .playbackMode(.playing(.toProgress(1, loopMode: .loop) ))
+            Text("Polishing your notes!")
+                .foregroundColor(Color("grey"))
         }
     }
 }

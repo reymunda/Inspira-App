@@ -3,6 +3,7 @@ import AVFoundation
 
 struct MeetingResult: View {
     @EnvironmentObject var meetingData: MeetingData
+    @State private var isLoading = true
     @State private var selectedTab = 0
     @State private var scrollOffset: CGFloat = 0
     @State private var audioProgress: Double = 0.0
@@ -16,46 +17,52 @@ struct MeetingResult: View {
         return formatter.string(from: Date())
     }
     var body: some View {
-        ZStack(alignment: .bottom) {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 16) {
-                        // Dynamic Header
-                        headerView
-                        // Segmented control
-                        
-                        segmentedControl
-                            .padding(.vertical, 0)
-                            .padding(.horizontal, 20)
+            ZStack(alignment: .bottom) {
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 16) {
+                            headerView
+                            if isLoading{
+                                VStack(alignment: .center) {
+                                    Loading()
+                                }
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 300)
+                            }else{
+                                segmentedControl
+                                    .padding(.vertical, 0)
+                                    .padding(.horizontal, 20)
 
-                        
-                        // Content
-                        if selectedTab == 0 {
-                            summaryView
-                                .padding(.horizontal, 20)
+                                if selectedTab == 0 {
+                                    summaryView
+                                        .padding(.horizontal, 20)
+                                } else {
+                                    transcriptView
+                                        .padding(.horizontal, 20)
+                                }
 
-                        } else {
-                            transcriptView
-                                .padding(.horizontal, 20)
+                                Spacer().frame(height: 120)
+                            }
+                            
                         }
-                        
-                        Spacer().frame(height: 120) // Spacer for fixed audio player
+                    }
+
+                    Image("dissolve")
+
+                    audioPlayerView
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 36)
+            }
+            .frame(width: UIScreen.main.bounds.width, alignment: .leading)
+            .onAppear {
+                setupAudio()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    withAnimation(.easeInOut){
+                        isLoading = false
                     }
                 }
-            
-    
-            // Fixed Audio Player with glassmorphism
-            Image("dissolve")
-              
-            audioPlayerView
-                .padding(.horizontal,20)
-                .padding(.bottom, 36)
+            }
+            .ignoresSafeArea()
         }
-        .frame(width: UIScreen.main.bounds.width, alignment: .leading)
-        .onAppear {
-            setupAudio()
-        }
-        .ignoresSafeArea()
-    }
 
     var headerView: some View {
         // Header
