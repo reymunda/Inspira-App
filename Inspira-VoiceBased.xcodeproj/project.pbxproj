@@ -92,6 +92,7 @@
 		EB4F51AC2DD9C49E00DA17FF /* Exceptions for "Inspira-VoiceBased" folder in "SessionRunningExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Assets.xcassets,
 				Components/EndMeetButton.swift,
 				Components/MultiplePulse.swift,
 				Components/SinglePulse.swift,
@@ -113,6 +114,7 @@
 		EB4F51E92DD9DF0400DA17FF /* Exceptions for "SessionRunning" folder in "Inspira-VoiceBased" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Assets.xcassets,
 				SessionRunningLiveActivity.swift,
 			);
 			target = EB88203C2DD0A2EF009C0AC7 /* Inspira-VoiceBased */;
