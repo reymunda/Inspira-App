@@ -7,5 +7,9 @@
 		<string>processing</string>
 		<string>audio</string>
 	</array>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>NSSupportsLiveActivities</key>
+	<true/>
 </dict>
 </plist>

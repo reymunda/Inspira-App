@@ -146,10 +146,6 @@ struct Recording: View {
         meetingData.audioURL = audioURL
     }
     func startLiveActivity() {
-        guard ActivityAuthorizationInfo().areActivitiesEnabled else {
-            print("Live Activities are not enabled")
-            return
-        }
         
         let attr = SessionRunningAttributes(name: "Reymunda")
         let state = SessionRunningAttributes.ContentState(emoji: "🔥")
