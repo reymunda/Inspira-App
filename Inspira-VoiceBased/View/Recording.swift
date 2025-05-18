@@ -7,9 +7,12 @@
 import SwiftUI
 import AVFoundation
 import SwiftUISpeechToText
-
+import ActivityKit
+import SessionRunningExtension
 
 struct Recording: View {
+    @State var currentActivity: Activity<SessionRunningAttributes>? = nil
+
     @State private var audioRecorder: AVAudioRecorder?
     @State private var audioURL: URL?
     @EnvironmentObject var meetingData: MeetingData
@@ -82,8 +85,11 @@ struct Recording: View {
         .task {
             speechRecognizer.transcribe()
             startRecording()
+            startLiveActivity()
+
         }
         .onChange(of: speechRecognizer.transcript) { newTranscript in
+            
             if let index = meetingData.selectedIndex, meetingData.sections.indices.contains(index) {
                 
                 if lastIndex != index {
@@ -139,6 +145,28 @@ struct Recording: View {
         audioRecorder?.stop()
         meetingData.audioURL = audioURL
     }
+    func startLiveActivity() {
+        guard ActivityAuthorizationInfo().areActivitiesEnabled else {
+            print("Live Activities are not enabled")
+            return
+        }
+        
+        let attr = SessionRunningAttributes(name: "Reymunda")
+        let state = SessionRunningAttributes.ContentState(emoji: "🔥")
+
+        do {
+            let activity = try Activity<SessionRunningAttributes>.request(
+                attributes: attr,
+                content: .init(state: state, staleDate: Date.now.addingTimeInterval(300)), // 5 menit
+                pushType: nil
+            )
+            currentActivity = activity
+            print("Live Activity started: \(activity.id)")
+        } catch {
+            print("Failed to start Live Activity: \(error.localizedDescription)")
+        }
+    }
+
 
     }
 

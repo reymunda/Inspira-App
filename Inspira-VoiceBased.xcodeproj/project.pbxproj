@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB1972BA2DD10E6C00AAE90C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EB1972B92DD10E6C00AAE90C /* Lottie */; };
-		EB1972BC2DD10E9D00AAE90C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EB1972BB2DD10E9D00AAE90C /* Lottie */; };
 		EB4F51052DD73EE700DA17FF /* SwiftUISpeechToText in Frameworks */ = {isa = PBXBuildFile; productRef = EB4F51042DD73EE700DA17FF /* SwiftUISpeechToText */; };
+		EB4F517F2DD9C05100DA17FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4F517E2DD9C05100DA17FF /* WidgetKit.framework */; };
+		EB4F51812DD9C05100DA17FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4F51802DD9C05100DA17FF /* SwiftUI.framework */; };
+		EB4F51922DD9C05200DA17FF /* SessionRunningExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EB4F517D2DD9C05100DA17FF /* SessionRunningExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EB4F51BA2DD9C69E00DA17FF /* SwiftUISpeechToText in Frameworks */ = {isa = PBXBuildFile; productRef = EB4F51B92DD9C69E00DA17FF /* SwiftUISpeechToText */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EB4F51902DD9C05200DA17FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB8820352DD0A2EF009C0AC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB4F517C2DD9C05100DA17FF;
+			remoteInfo = SessionRunningExtension;
+		};
 		EB88204E2DD0A2F0009C0AC7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EB8820352DD0A2EF009C0AC7 /* Project object */;
@@ -29,15 +38,103 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EB4F51972DD9C05200DA17FF /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EB4F51922DD9C05200DA17FF /* SessionRunningExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB4F51BB2DD9C69E00DA17FF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB4F51C02DD9C8A700DA17FF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		EB4F517D2DD9C05100DA17FF /* SessionRunningExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SessionRunningExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB4F517E2DD9C05100DA17FF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		EB4F51802DD9C05100DA17FF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		EB88203D2DD0A2EF009C0AC7 /* Inspira-VoiceBased.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inspira-VoiceBased.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB88204D2DD0A2F0009C0AC7 /* Inspira-VoiceBasedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Inspira-VoiceBasedTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8820572DD0A2F0009C0AC7 /* Inspira-VoiceBasedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Inspira-VoiceBasedUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		EB4F51932DD9C05200DA17FF /* Exceptions for "SessionRunning" folder in "SessionRunningExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = EB4F517C2DD9C05100DA17FF /* SessionRunningExtension */;
+		};
+		EB4F51AC2DD9C49E00DA17FF /* Exceptions for "Inspira-VoiceBased" folder in "SessionRunningExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Components/EndMeetButton.swift,
+				Components/MultiplePulse.swift,
+				Components/SinglePulse.swift,
+				Components/WheelPicker.swift,
+				Model/SessionData.swift,
+				View/MeetingResult.swift,
+				View/Recording.swift,
+			);
+			target = EB4F517C2DD9C05100DA17FF /* SessionRunningExtension */;
+		};
+		EB4F51C12DD9CD6600DA17FF /* Exceptions for "Inspira-VoiceBased" folder in "Inspira-VoiceBased" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Components/animation-lottie.swift",
+				Info.plist,
+			);
+			target = EB88203C2DD0A2EF009C0AC7 /* Inspira-VoiceBased */;
+		};
+		EB4F51E92DD9DF0400DA17FF /* Exceptions for "SessionRunning" folder in "Inspira-VoiceBased" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SessionRunningLiveActivity.swift,
+			);
+			target = EB88203C2DD0A2EF009C0AC7 /* Inspira-VoiceBased */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		EB4F51822DD9C05100DA17FF /* SessionRunning */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				EB4F51E92DD9DF0400DA17FF /* Exceptions for "SessionRunning" folder in "Inspira-VoiceBased" target */,
+				EB4F51932DD9C05200DA17FF /* Exceptions for "SessionRunning" folder in "SessionRunningExtension" target */,
+			);
+			path = SessionRunning;
+			sourceTree = "<group>";
+		};
 		EB88203F2DD0A2EF009C0AC7 /* Inspira-VoiceBased */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				EB4F51C12DD9CD6600DA17FF /* Exceptions for "Inspira-VoiceBased" folder in "Inspira-VoiceBased" target */,
+				EB4F51AC2DD9C49E00DA17FF /* Exceptions for "Inspira-VoiceBased" folder in "SessionRunningExtension" target */,
+			);
 			path = "Inspira-VoiceBased";
 			sourceTree = "<group>";
 		};
@@ -54,12 +151,20 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EB4F517A2DD9C05100DA17FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB4F51812DD9C05100DA17FF /* SwiftUI.framework in Frameworks */,
+				EB4F51BA2DD9C69E00DA17FF /* SwiftUISpeechToText in Frameworks */,
+				EB4F517F2DD9C05100DA17FF /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EB88203A2DD0A2EF009C0AC7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB1972BA2DD10E6C00AAE90C /* Lottie in Frameworks */,
-				EB1972BC2DD10E9D00AAE90C /* Lottie in Frameworks */,
 				EB4F51052DD73EE700DA17FF /* SwiftUISpeechToText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +189,8 @@
 		EB4F51002DD728E200DA17FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB4F517E2DD9C05100DA17FF /* WidgetKit.framework */,
+				EB4F51802DD9C05100DA17FF /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -94,6 +201,7 @@
 				EB88203F2DD0A2EF009C0AC7 /* Inspira-VoiceBased */,
 				EB8820502DD0A2F0009C0AC7 /* Inspira-VoiceBasedTests */,
 				EB88205A2DD0A2F0009C0AC7 /* Inspira-VoiceBasedUITests */,
+				EB4F51822DD9C05100DA17FF /* SessionRunning */,
 				EB4F51002DD728E200DA17FF /* Frameworks */,
 				EB88203E2DD0A2EF009C0AC7 /* Products */,
 			);
@@ -105,6 +213,7 @@
 				EB88203D2DD0A2EF009C0AC7 /* Inspira-VoiceBased.app */,
 				EB88204D2DD0A2F0009C0AC7 /* Inspira-VoiceBasedTests.xctest */,
 				EB8820572DD0A2F0009C0AC7 /* Inspira-VoiceBasedUITests.xctest */,
+				EB4F517D2DD9C05100DA17FF /* SessionRunningExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +221,30 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EB4F517C2DD9C05100DA17FF /* SessionRunningExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB4F51942DD9C05200DA17FF /* Build configuration list for PBXNativeTarget "SessionRunningExtension" */;
+			buildPhases = (
+				EB4F51792DD9C05100DA17FF /* Sources */,
+				EB4F517A2DD9C05100DA17FF /* Frameworks */,
+				EB4F517B2DD9C05100DA17FF /* Resources */,
+				EB4F51BB2DD9C69E00DA17FF /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				EB4F51822DD9C05100DA17FF /* SessionRunning */,
+			);
+			name = SessionRunningExtension;
+			packageProductDependencies = (
+				EB4F51B92DD9C69E00DA17FF /* SwiftUISpeechToText */,
+			);
+			productName = SessionRunningExtension;
+			productReference = EB4F517D2DD9C05100DA17FF /* SessionRunningExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		EB88203C2DD0A2EF009C0AC7 /* Inspira-VoiceBased */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB8820612DD0A2F0009C0AC7 /* Build configuration list for PBXNativeTarget "Inspira-VoiceBased" */;
@@ -119,18 +252,19 @@
 				EB8820392DD0A2EF009C0AC7 /* Sources */,
 				EB88203A2DD0A2EF009C0AC7 /* Frameworks */,
 				EB88203B2DD0A2EF009C0AC7 /* Resources */,
+				EB4F51972DD9C05200DA17FF /* Embed Foundation Extensions */,
+				EB4F51C02DD9C8A700DA17FF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EB4F51912DD9C05200DA17FF /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				EB88203F2DD0A2EF009C0AC7 /* Inspira-VoiceBased */,
 			);
 			name = "Inspira-VoiceBased";
 			packageProductDependencies = (
-				EB1972B92DD10E6C00AAE90C /* Lottie */,
-				EB1972BB2DD10E9D00AAE90C /* Lottie */,
 				EB4F51042DD73EE700DA17FF /* SwiftUISpeechToText */,
 			);
 			productName = "Inspira-VoiceBased";
@@ -193,6 +327,9 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					EB4F517C2DD9C05100DA17FF = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					EB88203C2DD0A2EF009C0AC7 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -216,7 +353,6 @@
 			mainGroup = EB8820342DD0A2EF009C0AC7;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				EB1972B52DD10CDB00AAE90C /* XCLocalSwiftPackageReference "../../../Downloads/lottie-ios-master" */,
 				EB4F51032DD73E1000DA17FF /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -227,11 +363,19 @@
 				EB88203C2DD0A2EF009C0AC7 /* Inspira-VoiceBased */,
 				EB88204C2DD0A2F0009C0AC7 /* Inspira-VoiceBasedTests */,
 				EB8820562DD0A2F0009C0AC7 /* Inspira-VoiceBasedUITests */,
+				EB4F517C2DD9C05100DA17FF /* SessionRunningExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EB4F517B2DD9C05100DA17FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EB88203B2DD0A2EF009C0AC7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +400,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EB4F51792DD9C05100DA17FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EB8820392DD0A2EF009C0AC7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,6 +431,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EB4F51912DD9C05200DA17FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB4F517C2DD9C05100DA17FF /* SessionRunningExtension */;
+			targetProxy = EB4F51902DD9C05200DA17FF /* PBXContainerItemProxy */;
+		};
 		EB88204F2DD0A2F0009C0AC7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EB88203C2DD0A2EF009C0AC7 /* Inspira-VoiceBased */;
@@ -293,6 +449,60 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		EB4F51952DD9C05200DA17FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LG73635B4T;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SessionRunning/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SessionRunning;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AppleDevAcademy.Inspira-VoiceBased1.SessionRunning";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB4F51962DD9C05200DA17FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LG73635B4T;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SessionRunning/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SessionRunning;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AppleDevAcademy.Inspira-VoiceBased1.SessionRunning";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		EB88205F2DD0A2F0009C0AC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -423,6 +633,7 @@
 				DEVELOPMENT_TEAM = LG73635B4T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Inspira-VoiceBased/Info.plist";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your meeting in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -454,6 +665,7 @@
 				DEVELOPMENT_TEAM = LG73635B4T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Inspira-VoiceBased/Info.plist";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your meeting in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -549,6 +761,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EB4F51942DD9C05200DA17FF /* Build configuration list for PBXNativeTarget "SessionRunningExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB4F51952DD9C05200DA17FF /* Debug */,
+				EB4F51962DD9C05200DA17FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EB8820382DD0A2EF009C0AC7 /* Build configuration list for PBXProject "Inspira-VoiceBased" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -587,13 +808,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		EB1972B52DD10CDB00AAE90C /* XCLocalSwiftPackageReference "../../../Downloads/lottie-ios-master" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../../Downloads/lottie-ios-master";
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
 		EB4F51032DD73E1000DA17FF /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -606,15 +820,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EB1972B92DD10E6C00AAE90C /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Lottie;
-		};
-		EB1972BB2DD10E9D00AAE90C /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Lottie;
-		};
 		EB4F51042DD73EE700DA17FF /* SwiftUISpeechToText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB4F51032DD73E1000DA17FF /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */;
+			productName = SwiftUISpeechToText;
+		};
+		EB4F51B92DD9C69E00DA17FF /* SwiftUISpeechToText */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EB4F51032DD73E1000DA17FF /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */;
 			productName = SwiftUISpeechToText;
