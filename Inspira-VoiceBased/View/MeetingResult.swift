@@ -23,7 +23,7 @@ struct MeetingResult: View {
                             headerView
                             if isLoading{
                                 VStack(alignment: .center) {
-//                                    Loading()
+                                    LoadingSVG()
                                 }
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 300)

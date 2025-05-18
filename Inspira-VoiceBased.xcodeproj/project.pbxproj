@@ -12,6 +12,8 @@
 		EB4F51812DD9C05100DA17FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4F51802DD9C05100DA17FF /* SwiftUI.framework */; };
 		EB4F51922DD9C05200DA17FF /* SessionRunningExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EB4F517D2DD9C05100DA17FF /* SessionRunningExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EB4F51BA2DD9C69E00DA17FF /* SwiftUISpeechToText in Frameworks */ = {isa = PBXBuildFile; productRef = EB4F51B92DD9C69E00DA17FF /* SwiftUISpeechToText */; };
+		EB4F52572DDA206E00DA17FF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EB4F52562DDA206E00DA17FF /* Lottie */; };
+		EB4F525D2DDA22E800DA17FF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = EB4F525C2DDA22E800DA17FF /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,7 @@
 		EB4F51AC2DD9C49E00DA17FF /* Exceptions for "Inspira-VoiceBased" folder in "SessionRunningExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Animation/LoadingAPNG.swift,
 				Assets.xcassets,
 				Components/EndMeetButton.swift,
 				Components/MultiplePulse.swift,
@@ -106,7 +109,6 @@
 		EB4F51C12DD9CD6600DA17FF /* Exceptions for "Inspira-VoiceBased" folder in "Inspira-VoiceBased" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"Components/animation-lottie.swift",
 				Info.plist,
 			);
 			target = EB88203C2DD0A2EF009C0AC7 /* Inspira-VoiceBased */;
@@ -167,7 +169,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB4F525D2DDA22E800DA17FF /* SDWebImageSwiftUI in Frameworks */,
 				EB4F51052DD73EE700DA17FF /* SwiftUISpeechToText in Frameworks */,
+				EB4F52572DDA206E00DA17FF /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +272,8 @@
 			name = "Inspira-VoiceBased";
 			packageProductDependencies = (
 				EB4F51042DD73EE700DA17FF /* SwiftUISpeechToText */,
+				EB4F52562DDA206E00DA17FF /* Lottie */,
+				EB4F525C2DDA22E800DA17FF /* SDWebImageSwiftUI */,
 			);
 			productName = "Inspira-VoiceBased";
 			productReference = EB88203D2DD0A2EF009C0AC7 /* Inspira-VoiceBased.app */;
@@ -356,6 +362,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				EB4F51032DD73E1000DA17FF /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */,
+				EB4F52552DDA206300DA17FF /* XCLocalSwiftPackageReference "../../../Downloads/lottie-ios-master" */,
+				EB4F525B2DDA22DF00DA17FF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EB88203E2DD0A2EF009C0AC7 /* Products */;
@@ -810,6 +818,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		EB4F52552DDA206300DA17FF /* XCLocalSwiftPackageReference "../../../Downloads/lottie-ios-master" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../Downloads/lottie-ios-master";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		EB4F51032DD73E1000DA17FF /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -817,6 +832,14 @@
 			requirement = {
 				branch = main;
 				kind = branch;
+			};
+		};
+		EB4F525B2DDA22DF00DA17FF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -831,6 +854,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EB4F51032DD73E1000DA17FF /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */;
 			productName = SwiftUISpeechToText;
+		};
+		EB4F52562DDA206E00DA17FF /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB4F52552DDA206300DA17FF /* XCLocalSwiftPackageReference "../../../Downloads/lottie-ios-master" */;
+			productName = Lottie;
+		};
+		EB4F525C2DDA22E800DA17FF /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB4F525B2DDA22DF00DA17FF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
