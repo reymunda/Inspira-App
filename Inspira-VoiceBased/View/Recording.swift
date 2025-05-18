@@ -73,6 +73,7 @@ struct Recording: View {
                     .onChange(of: navigate) {
                         stopRecording()
                         speechRecognizer.stopTranscribing()
+                        endLiveActivity()
                         
                     }
 
@@ -153,7 +154,7 @@ struct Recording: View {
         do {
             let activity = try Activity<SessionRunningAttributes>.request(
                 attributes: attr,
-                content: .init(state: state, staleDate: Date.now.addingTimeInterval(300)), // 5 menit
+                content: .init(state: state, staleDate: Date.now.addingTimeInterval(300)),
                 pushType: nil
             )
             currentActivity = activity
@@ -162,6 +163,15 @@ struct Recording: View {
             print("Failed to start Live Activity: \(error.localizedDescription)")
         }
     }
+    
+    func endLiveActivity() {
+        if ActivityAuthorizationInfo().areActivitiesEnabled {
+            Task {
+                await currentActivity?.end(nil, dismissalPolicy: .immediate)
+            }
+        }
+    }
+
 
 
     }
